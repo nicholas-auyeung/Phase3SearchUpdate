@@ -6,15 +6,33 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Edit Dashboard</title>
 </head>
 <body>
-	<form method="post" action="save">
-		User Id : "${emp.getId()}"
-		Name:<input type="text" name="name" value="${emp.getName()}" /> 
-		Email:<input type="text" name="email" value="${emp.getEmail()}"/> 
-		City:<input type="text" name="city" value="${emp.getCity()}" /> 
-		<input type="submit" value="Edit User">
-	</form>
+	 <form:form action="save" method="post" modelAttribute="edituser">
+            <table border="0" cellpadding="5">
+                <tr>
+                    <td>ID: </td>
+                    <td>${edituser.id}
+                        <form:hidden path="id"/>
+                    </td>
+                </tr>       
+                <tr>
+                    <td>Name: </td>
+                    <td><form:input path="name" /></td>
+                </tr>
+                <tr>
+                    <td>Email: </td>
+                    <td><form:input path="email" /></td>
+                </tr>
+                <tr>
+                    <td>City: </td>
+                    <td><form:input path="city" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="Save"></td>
+                </tr>                   
+            </table>
+        </form:form>
 </body>
 </html>

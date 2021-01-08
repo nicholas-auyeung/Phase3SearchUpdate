@@ -21,8 +21,6 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	private int tempId;
-	
 	@PostMapping("/adduser")
 	public String newUser(User user) {
 		if(userService.addUser(user)) {
@@ -53,33 +51,32 @@ public class UserController {
 		return new ModelAndView("searchuserid", "form", user);
 	}
 	
+	
+	
+	@GetMapping("/editdashboard/{id}")
+	public ModelAndView updateUser(@PathVariable("id") int id) {
+		ModelAndView mv = new ModelAndView("editdashboard");
+		User user = userService.getUser(id);
+		mv.addObject("edituser", user);
+		return mv;
+		
+	}
+	
 	@PostMapping("/editdashboard/{id}")
-	public String save(@RequestParam("name") String name, @RequestParam("email") String email, @RequestParam("city") String city) {
-		User user = userService.getUser(tempId);
-		user.setName(name);
-		user.setEmail(email);
-		user.setCity(city);
+	public String save(@ModelAttribute("edituser") User user) {
+		
 		if(userService.updateUser(user)) {
-			return "redirect:/dashboard/"+tempId;
+			return "redirect:/dashboard/"+user.getId();
 		}
 		return "/editdashboard" + user.getId();
 	}
 	
-	@GetMapping("/editdashboard/{id}")
-	public ModelAndView updateUser(@PathVariable("id") int id) {
-		tempId = id;
-		ModelAndView mv = new ModelAndView("editdashboard");
-		User user = userService.getUser(id);
-		mv.addObject(user);
-		return mv;
-		
-	}
 	
 	@GetMapping("/dashboard/{id}")
 	public ModelAndView dashboard(@PathVariable("id") int id) {
 		ModelAndView mv = new ModelAndView("dashboard");
 		User user = userService.getUser(id);
-		mv.addObject(user);
+		mv.addObject("useratt", user);
 		return mv;
 	}
 

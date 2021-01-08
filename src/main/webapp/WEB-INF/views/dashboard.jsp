@@ -10,12 +10,13 @@
 <body>
 <h1>Dashboard</h1>
 <ul>
-	<c:forEach items="${user}" var="attributes">
-		<li>Emp No</li>
-		<li>${emps.id}</li>
-		<li>${emps.name}</li>
-	</c:forEach>
-
+	<div modelAttribute="useratt">
+		User ID: ${useratt.id}</br>
+		Name: ${useratt.name}</br>
+		Email: ${useratt.email}</br>
+		City: ${useratt.city}
+	</div>
+	<a href="/searchuser">Search Users</a>
 </ul>
 </body>
 </html>
