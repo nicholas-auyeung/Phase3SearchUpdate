@@ -9,20 +9,21 @@
 <title>Search User</title>
 </head>
 <body>
-	<h1>Search User</h1>
+	<div align="center">
+		<h1>Search User</h1>
+		
+		<form:form modelAttribute="form">
+			<form:errors path="" element="div" />
+			<div>
+				<form:label path="id"> User Id</form:label>
+				<form:input path="id" />
+				<form:errors path="id" />
 	
-	<form:form modelAttribute="form">
-		<form:errors path="" element="div" />
-		<div>
-			<form:label path="id"> User Id</form:label>
-			<form:input path="id" />
-			<form:errors path="id" />
-
-		</div>
-		<div>
-			<input type="submit" value="Search User" />
-		</div>
-	</form:form>
-	
+			</div>
+			<div>
+				<input type="submit" value="Search User" />
+			</div>
+		</form:form>
+	</div>
 </body>
 </html>

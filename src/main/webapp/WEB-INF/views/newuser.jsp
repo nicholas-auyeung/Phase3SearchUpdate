@@ -9,19 +9,21 @@
 <title>Add User</title>
 </head>
 <body>
-	<h1>Add User</h1>
-
-	<form:form modelAttribute="form">
-		<form:errors path="" element="div" />
-		<div>
-			<form:label path="name"> User Name</form:label>
-			<form:input path="name" />
-			<form:errors path="name" />
-
-		</div>
-		<div>
-			<input type="submit" value="Add User" />
-		</div>
-	</form:form>
+	<div align="center">
+		<h1>Add User</h1>
+	
+		<form:form modelAttribute="form">
+			<form:errors path="" element="div" />
+			<div>
+				<form:label path="name"> User Name</form:label>
+				<form:input path="name" />
+				<form:errors path="name" />
+	
+			</div>
+			<div>
+				<input type="submit" value="Submit" />
+			</div>
+		</form:form>
+	</div>
 </body>
 </html>

@@ -8,15 +8,17 @@
 <title>Dashboard</title>
 </head>
 <body>
-<h1>Dashboard</h1>
-<ul>
-	<div modelAttribute="useratt">
-		User ID: ${useratt.id}</br>
-		Name: ${useratt.name}</br>
-		Email: ${useratt.email}</br>
-		City: ${useratt.city}
+	<div align="center">
+		<h1>Dashboard</h1>
+		<ul>
+			<div modelAttribute="useratt">
+				User ID: ${useratt.id}</br>
+				Name: ${useratt.name}</br>
+				Email: ${useratt.email}</br>
+				City: ${useratt.city}
+			</div>
+		</ul>
 	</div>
 	<a href="/searchuser">Search Users</a>
-</ul>
 </body>
 </html>
