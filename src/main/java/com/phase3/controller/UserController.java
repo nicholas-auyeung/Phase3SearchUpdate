@@ -76,30 +76,12 @@ public class UserController {
 	}
 	
 	@GetMapping("/dashboard/{id}")
-	public String dashboard() {
-		return " asd";
-	}
-	
-	
-	/*
-	public String showform(Model m) {
-		m.addAttribute("command", new User());
-		return "editdashboard";
-		
-	}
-	
-	@GetMapping("/editdashboard/{id}")
-	public String editdashboardAtt(@PathVariable("id") int id, Model m) {
+	public ModelAndView dashboard(@PathVariable("id") int id) {
+		ModelAndView mv = new ModelAndView("dashboard");
 		User user = userService.getUser(id);
-		m.addAttribute("command", user);
-		return "editdashboard";
+		mv.addObject(user);
+		return mv;
 	}
-	@PutMapping("/save")
-	public String saveUser(@ModelAttribute("user") User user) {
-		if(userService.updateUser(user)) {
-			return "redirect:/dashboard/" + user.getId();
-		}
-		return "redirect:/editdashboard";
-	}*/
+
 	
 }
