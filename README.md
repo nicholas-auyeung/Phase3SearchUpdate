@@ -1,10 +1,10 @@
 # Searching for a Specific User and Updating the User Information
 
-This web application adds users or searchs for existing users by user ID and allows the user to modify the details of the specific user record...
+This web application adds users or searches for existing users by user ID and allows the user to modify the details of the specific user record...
 
 ## Features
 
-	- Adds new users to database automatically assigning an unique user id
+	- Adds new users to database automatically assigning a unique user id
 	- Searches existing users by user id 
 	- Allows to user to modify and update user details after adding user or succesfully searching an existing user
 	- Displays final user details
