@@ -42,7 +42,7 @@ public class UserController {
 		if(userService.searchUser(user.getId())) {
 			return "redirect:/editdashboard/"+ user.getId();
 		}
-		return "redirect:/searchuser";
+		return "redirect:/errors";
 	}
 	
 	@GetMapping("/searchuser")
@@ -78,6 +78,12 @@ public class UserController {
 		User user = userService.getUser(id);
 		mv.addObject("useratt", user);
 		return mv;
+	}
+	
+	@GetMapping("/errors")
+	public ModelAndView errors() {
+		return new ModelAndView("usernotfound");
+		
 	}
 
 	
